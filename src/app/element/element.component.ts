@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ValueColor } from '../models/value-color';
 
 @Component({
   selector: 'app-element',
@@ -6,7 +7,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   styleUrls: ['./element.component.scss']
 })
 export class ElementComponent implements OnInit,OnChanges {
-  @Input() sortArray:number[];
+  @Input() sortArray:ValueColor[];
   constructor() { }
 
   ngOnInit(): void {

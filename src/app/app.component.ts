@@ -7,6 +7,7 @@ import {
 import {
   SortType
 } from './models/sort-enum';
+import { ValueColor } from './models/value-color';
 import { SorterComponent } from './sorter/sorter.component';
 
 @Component({
@@ -20,7 +21,9 @@ export class AppComponent implements OnInit{
   arraySize = 50;
   sortTypes = SortType;
   selectedSort: SortType = this.sortTypes.BUBBLE;
-  sortArray: number[] = [];
+  sortArray: ValueColor[] = [];
+  delay:string = '10';
+  
   setType(stype: SortType): void {
     this.selectedSort =stype;
     this.sorter.callSorting(this.selectedSort);
@@ -32,7 +35,7 @@ export class AppComponent implements OnInit{
     }
     this.sortArray = [];
     for (let idx = 0; idx < this.arraySize; idx++) {
-      this.sortArray.push(Math.floor(Math.random() * this.arraySize));
+      this.sortArray.push({value:Math.floor(Math.random() * this.arraySize),color:'#9e9eb9'});
     }
   }
   ngOnInit():void{

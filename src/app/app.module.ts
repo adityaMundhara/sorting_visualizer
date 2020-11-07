@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SorterComponent } from './sorter/sorter.component';
 import { ElementComponent } from './element/element.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     FlexLayoutModule ,
     MatSliderModule,
-    FormsModule,MatButtonModule
+    FormsModule,MatButtonModule,MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
