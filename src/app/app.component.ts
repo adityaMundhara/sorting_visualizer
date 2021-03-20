@@ -23,10 +23,12 @@ export class AppComponent implements OnInit{
   selectedSort: SortType = this.sortTypes.BUBBLE;
   sortArray: ValueColor[] = [];
   delay:string = '10';
-  
-  setType(stype: SortType): void {
+  disable:boolean;
+  async setType(stype: SortType): Promise<void> {
     this.selectedSort =stype;
-    this.sorter.callSorting(this.selectedSort);
+    this.disable=true;
+    await this.sorter.callSorting(this.selectedSort);
+    this.disable=false;
   }
 
   generateArray(event ? : MatSliderChange) {

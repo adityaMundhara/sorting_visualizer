@@ -7,14 +7,14 @@
     </mat-form-field>
   </div>
     <div>
-    <button mat-raised-button (click)="generateArray()">Generate New Array</button>
+    <button mat-raised-button (click)="generateArray()" [disabled]=disable >Generate New Array</button>
   </div>
     <div fxFlex=20>
-      <mat-slider (input)="generateArray($event)" [(ngModel)] = "arraySize"></mat-slider>
+      <mat-slider (input)="generateArray($event)" [(ngModel)] = "arraySize" [disabled]=disable></mat-slider>
     </div>
     <div fxLayoutGap="5px">
       <button mat-raised-button *ngFor="let sort of sortTypes | keyvalue"
-        (click)="setType(sort.value)">{{sort.key}}</button>
+        (click)="setType(sort.value)" [disabled]=disable>{{sort.key}}</button>
     </div>
   </div>
   <div fxFlex>
